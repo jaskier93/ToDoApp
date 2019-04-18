@@ -32,7 +32,7 @@ public class TaskService {
                 .ifPresent(t -> {
                     t.setDescription(task.getDescription());
                     t.setDate(task.getDate());
-                    t.setStatus(task.status()); //sprawdzić czy działa -dodać własnego gettera gdyby nie działało
+                    t.isStatus(); //sprawdzić czy działa -dodać własnego gettera gdyby nie działało
                     repository.save(t);
                 });
 

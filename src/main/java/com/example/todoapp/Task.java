@@ -33,8 +33,9 @@ public class Task {
     @Column(name = "status")
     private boolean status;
 
-    public boolean status() {
-        return status;
+    public String status() {
+        return status? "Done": "To do!";
     }
+
 //ustawiać automatycznie jako false (niewykonano) przy dodawaniu nowego zadania przez usera
 }
