@@ -22,7 +22,6 @@ public class MainController {
 
     @GetMapping("/add")
     public String addTask(@ModelAttribute Task task) {
- //       System.out.println(task.getDate());
         taskService.addTask(task);
         return "redirect:/";
     }
@@ -30,7 +29,6 @@ public class MainController {
 
     @GetMapping("/update")
     public String updateTask(@ModelAttribute Task task) {
-   //     System.out.println(task.getDate());
         taskService.updateTask(task);
         return "redirect:/";
 
