@@ -1,12 +1,15 @@
 package com.example.todoapp;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
-public class Service {
+@Service
+public class TaskService {
 
     private Repository repository;
 
-    public Service(Repository repository) {
+    public TaskService(Repository repository) {
         this.repository = repository;
     }
 
