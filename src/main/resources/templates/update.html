@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoApp</title>
+</head>
+<body>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <form action="/update" th:object="${task}">
+            <p>Task</p>
+            <input type="text" name="title" value=""><br>
+            <p>Description</p>
+            <input type="text" name="description" value=""><br>
+            <p>Date</p>
+            <input id="datapicker" name="date" value=""><br>
+            <input type="submit" value="Add task">
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

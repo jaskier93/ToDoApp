@@ -3,9 +3,7 @@ package com.example.todoapp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @CrossOrigin
@@ -18,13 +16,13 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("tasks", taskService.getTasksList());
+        model.addAttribute("task", taskService.getTasksList());
         return "index";
     }
 
     @GetMapping("/add")
     public String addTask(@ModelAttribute Task task) {
-        System.out.println(task.getDateOfTask());
+ //       System.out.println(task.getDate());
         taskService.addTask(task);
         return "redirect:/";
     }
@@ -32,7 +30,7 @@ public class MainController {
 
     @GetMapping("/update")
     public String updateTask(@ModelAttribute Task task) {
-        System.out.println(task.getDateOfTask());
+   //     System.out.println(task.getDate());
         taskService.updateTask(task);
         return "redirect:/";
 

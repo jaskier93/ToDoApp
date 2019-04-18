@@ -31,8 +31,8 @@ public class TaskService {
         repository.findByTitle(task.getTitle())
                 .ifPresent(t -> {
                     t.setDescription(task.getDescription());
-                    t.setDateOfTask(task.getDateOfTask());
-                    t.setDone(task.isDone()); //sprawdzić czy działa -dodać własnego gettera gdyby nie działało
+                    t.setDate(task.getDate());
+                    t.setStatus(task.status()); //sprawdzić czy działa -dodać własnego gettera gdyby nie działało
                     repository.save(t);
                 });
 
