@@ -1,5 +1,7 @@
-package com.example.todoapp;
+package com.example.todoapp.controllers;
 
+import com.example.todoapp.services.TaskService;
+import com.example.todoapp.models.Task;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,12 +28,10 @@ public class MainController {
         return "redirect:/";
     }
 
-
     @GetMapping("/update")
     public String updateTask(@ModelAttribute Task task) {
         taskService.updateTask(task);
         return "redirect:/";
-
     }
 
     @GetMapping("/delete")
@@ -40,12 +40,10 @@ public class MainController {
         return "redirect:/";
     }
 
-
     @GetMapping("/updateinfo")
     public String updateInfo(@RequestParam(value = "task") String title, Model model) {
         Task task = taskService.getTaskByTitle(title);
         model.addAttribute("task", task);
         return "update";
     }
-
 }

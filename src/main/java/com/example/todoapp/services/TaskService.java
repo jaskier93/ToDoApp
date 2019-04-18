@@ -1,5 +1,7 @@
-package com.example.todoapp;
+package com.example.todoapp.services;
 
+import com.example.todoapp.repositories.Repository;
+import com.example.todoapp.models.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,8 +37,6 @@ public class TaskService {
                     t.isStatus(); //sprawdzić czy działa -dodać własnego gettera gdyby nie działało
                     repository.save(t);
                 });
-
-
     }
 
     public Task getTaskByTitle(String title) {

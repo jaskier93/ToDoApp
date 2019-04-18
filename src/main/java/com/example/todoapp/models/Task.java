@@ -1,4 +1,4 @@
-package com.example.todoapp;
+package com.example.todoapp.models;
 
 
 import lombok.AllArgsConstructor;
@@ -30,6 +30,7 @@ public class Task {
     @Column(name = "date")
     private Date date;
 
+    //ustawiać automatycznie jako false (niewykonano) przy dodawaniu nowego zadania
     @Column(name = "status")
     private boolean status;
 
@@ -37,5 +38,5 @@ public class Task {
         return status? "Done": "To do!";
     }
 
-//ustawiać automatycznie jako false (niewykonano) przy dodawaniu nowego zadania przez usera
+
 }
